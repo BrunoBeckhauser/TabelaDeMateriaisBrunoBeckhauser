@@ -1,97 +1,103 @@
 {
-  "_version": "1.65.0",
-  "sap.app": {
-    "id": "listademateriaismoduloname",
-    "type": "application",
-    "i18n": "i18n/i18n.properties",
-    "title": "{{appTitle}}",
-    "description": "{{appDescription}}",
-    "applicationVersion": {
-      "version": "0.0.1"
-    },
-    "dataSources": {
-      "mainService": {
-        "uri": "/odata/v4/prova-btp/",
-        "type": "OData",
-        "settings": {
-          "odataVersion": "4.0"
+    "_version": "1.65.0",
+    "sap.app": {
+        "id": "listademateriaismoduloname",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "dataSources": {
+            "mainService": {
+                "uri": "/odata/v4/prova-btp/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "4.0",
+                    "localUri": "localService/metadata.l"
+                }
+            }
+        },
+        "sourceTemplate": {
+            "id": "@sap/ux-app-migrator:freestyle",
+            "version": "1.22.0",
+            "toolsId": "ef1be3cd-cf68-441c-95ee-4eeeff3bc09e"
         }
-      }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {},
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "dependencies": {
+            "minUI5Version": "1.146.0",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.ui.layout": {}
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "listademateriaismoduloname.i18n.i18n"
+                }
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {
+                    "operationMode": "Server",
+                    "autoExpandSelect": true,
+                    "synchronizationMode": "None"
+                }
+            }
+        },
+        "rootView": {
+            "viewName": "listademateriaismoduloname.view.App",
+            "type": "XML",
+            "id": "App",
+            "async": true
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "viewPath": "listademateriaismoduloname.view",
+                "controlId": "app",
+                "controlAggregation": "pages",
+                "async": true
+            },
+            "routes": [
+                {
+                    "name": "RouteLista",
+                    "pattern": "",
+                    "target": [
+                        "TargetLista"
+                    ]
+                }
+            ],
+            "targets": {
+                "TargetLista": {
+                    "viewId": "Lista",
+                    "viewName": "Lista",
+                    "viewType": "XML"
+                }
+            }
+        }
     }
-  },
-  "sap.ui": {
-    "technology": "UI5",
-    "icons": {},
-    "deviceTypes": {
-      "desktop": true,
-      "tablet": true,
-      "phone": true
-    }
-  },
-  "sap.ui5": {
-    "dependencies": {
-      "minUI5Version": "1.146.0",
-      "libs": {
-        "sap.m": {},
-        "sap.ui.core": {},
-        "sap.ui.layout": {}
-      }
-    },
-    "resources": {
-      "css": [
-        {
-          "uri": "css/style.css"
-        }
-      ]
-    },
-    "models": {
-      "i18n": {
-        "type": "sap.ui.model.resource.ResourceModel",
-        "settings": {
-          "bundleName": "listademateriaismoduloname.i18n.i18n"
-        }
-      },
-      "": {
-        "dataSource": "mainService",
-        "preload": true,
-        "settings": {
-          "operationMode": "Server",
-          "autoExpandSelect": true,
-          "synchronizationMode": "None"
-        }
-      }
-    },
-    "rootView": {
-      "viewName": "listademateriaismoduloname.view.App",
-      "type": "XML",
-      "id": "App",
-      "async": true
-    },
-    "routing": {
-      "config": {
-        "routerClass": "sap.m.routing.Router",
-        "viewType": "XML",
-        "viewPath": "listademateriaismoduloname.view",
-        "controlId": "app",
-        "controlAggregation": "pages",
-        "async": true
-      },
-      "routes": [
-        {
-          "name": "RouteLista",
-          "pattern": "",
-          "target": [
-            "TargetLista"
-          ]
-        }
-      ],
-      "targets": {
-        "TargetLista": {
-          "viewId": "Lista",
-          "viewName": "Lista",
-          "viewType": "XML"
-        }
-      }
-    }
-  }
 }

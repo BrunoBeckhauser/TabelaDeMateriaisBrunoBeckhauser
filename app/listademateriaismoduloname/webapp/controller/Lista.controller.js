@@ -80,12 +80,12 @@ sap.ui.define([
             const iQuantidadeAtual = Number(oViewModel.getProperty("/filtro") || 999);
 
             if (!Number.isInteger(iNumMat) || iNumMat <= 0) {
-                MessageBox.error("Informe um NumMat inteiro maior que zero.");
+                MessageBox.error("Informe um NumMatgit  inteiro maior que zero.");
                 return;
             }
 
             if (!sNome || !sDescr) {
-                MessageBox.error("Preencha Nome e Descr antes de criar o material.");
+                MessageBox.error("Preencha Nome e Descrição antes de criar o material.");
                 return;
             }
 
