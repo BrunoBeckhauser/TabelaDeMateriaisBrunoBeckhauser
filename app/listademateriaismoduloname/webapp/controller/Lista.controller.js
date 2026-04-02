@@ -77,7 +77,7 @@ sap.ui.define([
             const iNumMat = Number(oPayload.NumMat);
             const sNome = String(oPayload.Nome || "").trim();
             const sDescr = String(oPayload.Descr || "").trim();
-            const iQuantidadeAtual = Number(oViewModel.getProperty("/filtro") || 10);
+            const iQuantidadeAtual = Number(oViewModel.getProperty("/filtro") || 999);
 
             if (!Number.isInteger(iNumMat) || iNumMat <= 0) {
                 MessageBox.error("Informe um NumMat inteiro maior que zero.");
@@ -96,7 +96,8 @@ sap.ui.define([
             try {
                 const sMessage = await ListaHandler.createMaterial(this);
                 this.onCreateDialogClose();
-                await ListaHandler.loadTableData(this, Number.isInteger(iQuantidadeAtual) ? iQuantidadeAtual : 10);
+                await ListaHandler.loadTableData(this, Number.isInteger(iQuantidadeAtual) ? iQuantidadeAtual : 999);
+                this.getView().getModel("materiais").setProperty("/filtro", "");
                 MessageBox.success(sMessage);
             } catch (oError) {
                 MessageBox.error(oError.message);
