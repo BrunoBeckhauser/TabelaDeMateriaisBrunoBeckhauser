@@ -6,7 +6,7 @@
         contentWidth="28rem">
         <content>
             <VBox class="sapUiMediumMargin">
-                <Label text="NumMat" labelFor="inputNumMat" />
+                <Label text="ID" labelFor="inputNumMat" />
                 <Input
                     id="inputNumMat"
                     value="{materiais>/novoMaterial/NumMat}"

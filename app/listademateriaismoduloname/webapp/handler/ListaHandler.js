@@ -48,7 +48,18 @@ sap.ui.define([], () => {
         registerModel: function (oController) {
             const oViewModel = new sap.ui.model.json.JSONModel({
                 filtro: String(INITIAL_LOAD_QUANTITY),
-                tableMaterial: [],
+                tableMaterial: [
+                    { ID: 1,  NumMat: 10,  Nome: "Óleo01", Descr: "Óleo01" },
+                    { ID: 2,  NumMat: 20,  Nome: "Óleo02", Descr: "Óleo02" },
+                    { ID: 3,  NumMat: 30,  Nome: "Óleo03", Descr: "Óleo03" },
+                    { ID: 4,  NumMat: 40,  Nome: "Óleo04", Descr: "Óleo04" },
+                    { ID: 5,  NumMat: 50,  Nome: "Óleo05", Descr: "Óleo05" },
+                    { ID: 6,  NumMat: 60,  Nome: "Óleo06", Descr: "Óleo06" },
+                    { ID: 7,  NumMat: 70,  Nome: "Óleo07", Descr: "Óleo07" },
+                    { ID: 8,  NumMat: 80,  Nome: "Óleo08", Descr: "Óleo08" },
+                    { ID: 9,  NumMat: 90,  Nome: "Óleo09", Descr: "Óleo09" },
+                    { ID: 10, NumMat: 100, Nome: "Óleo10", Descr: "Óleo10" }
+                ],
                 busy: false,
                 novoMaterial: {
                     NumMat: "",
