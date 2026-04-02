@@ -1,0 +1,69 @@
+<mvc:View
+    controllerName="listademateriaismoduloname.controller.Lista"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page
+        title="{i18n>appTitle}"
+        busy="{materiais>/busy}">
+        <content>
+            <VBox class="sapUiSmallMargin">
+                <HBox
+                    class="sapUiSmallMarginBottom"
+                    alignItems="Center"
+                    justifyContent="Start">
+                    <Input
+                        value="{materiais>/filtro}"
+                        width="12rem"
+                        type="Number"
+                        placeholder="Quantidade" />
+                    <Button
+                        text="Filtrar"
+                        type="Emphasized"
+                        class="sapUiTinyMarginBegin"
+                        press=".onFiltrarPress" />
+                </HBox>
+
+                <Table
+                    id="tableMaterial"
+                    inset="false"
+                    items="{materiais>/tableMaterial}">
+                    <headerToolbar>
+                        <Toolbar>
+                            <Title text="Tabela de Materiais" />
+                            <ToolbarSpacer />
+                            <Button
+                                text="Criar"
+                                press=".onOpenCreateDialog" />
+                        </Toolbar>
+                    </headerToolbar>
+
+                    <columns>
+                        <Column>
+                            <Text text="ID" />
+                        </Column>
+                        <Column>
+                            <Text text="NumMat" />
+                        </Column>
+                        <Column>
+                            <Text text="Nome" />
+                        </Column>
+                        <Column>
+                            <Text text="Descr" />
+                        </Column>
+                    </columns>
+
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="{materiais>ID}" />
+                                <Text text="{materiais>NumMat}" />
+                                <Text text="{materiais>Nome}" />
+                                <Text text="{materiais>Descr}" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
