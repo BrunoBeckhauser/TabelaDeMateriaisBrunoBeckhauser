@@ -20,7 +20,8 @@ sap.ui.define([
             }
 
             try {
-                await ListaHandler.loadTableData(this, 10);
+                await ListaHandler.loadTableData(this, 999);
+                this.getView().getModel("materiais").setProperty("/filtro", "");
             } catch (oError) {
                 MessageBox.error(oError.message);
             }

@@ -47,7 +47,7 @@ sap.ui.define([], () => {
     return {
         registerModel: function (oController) {
             const oViewModel = new sap.ui.model.json.JSONModel({
-                filtro: String(INITIAL_LOAD_QUANTITY),
+                filtro: "",
                 tableMaterial: [
                     { ID: 1,  NumMat: 10,  Nome: "Óleo01", Descr: "Óleo01" },
                     { ID: 2,  NumMat: 20,  Nome: "Óleo02", Descr: "Óleo02" },
